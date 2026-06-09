@@ -1,0 +1,218 @@
+.container {
+  padding: 32px;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, var(--text-primary), var(--text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headerControls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.exportBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--bg-panel-border);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.exportBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--accent-green);
+  border-radius: 20px;
+  color: var(--accent-green);
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.pulse {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-green);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-green);
+  animation: pulseAnim 2s infinite;
+}
+
+@keyframes pulseAnim {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+}
+
+.mainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.statCard {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.statLabel {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.chartsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  height: 300px;
+}
+
+.chartContainer {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.eventFeed {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.eventItem {
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 4px solid var(--accent-cyan);
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+  animation: slideIn 0.3s ease-out;
+}
+
+.eventItem.block { border-left-color: var(--accent-red); }
+.eventItem.quarantine { border-left-color: var(--accent-yellow); }
+.eventItem.allow { border-left-color: var(--accent-green); }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.eventHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.eventAction {
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.eventFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.badge.block { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+.badge.quarantine { background: rgba(245, 158, 11, 0.2); color: var(--accent-yellow); }
+.badge.allow { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+
+.agentList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agentItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.agentActive {
+  color: var(--accent-green);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
